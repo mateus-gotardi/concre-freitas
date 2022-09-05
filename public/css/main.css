@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Telugu:wght@300;400;500;600;700;800;900&display=swap");
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+.top-nav {
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ebebeb;
+  color: #0d3143;
+  height: 70px;
+  padding: 1em;
+  box-shadow: 0px 0px 5px 0px #000000;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #0d3143;
+  font-weight: 600;
+}
+
+.logo {
+  height: 2.5rem;
+}
+.logo img {
+  height: 100%;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu > li {
+  margin: 0 1rem;
+  overflow: hidden;
+}
+
+.menu-button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: #006699;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+
+.menu-button::before {
+  content: "";
+  margin-top: -8px;
+}
+
+.menu-button::after {
+  content: "";
+  margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+
+@media (max-width: 700px) {
+  .menu-button-container {
+    display: flex;
+  }
+  .menu {
+    position: absolute;
+    top: 0;
+    margin-top: 70px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 5px 0px #000000;
+  }
+  #menu-toggle ~ .menu li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  #menu-toggle:checked ~ .menu li {
+    border: 1px solid #cccccc;
+    height: 2.5em;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: 2;
+  }
+  .menu > li {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    background-color: #006699;
+  }
+  .menu > li a {
+    color: #cccccc;
+  }
+}
+.carousel {
+  height: 75vh;
+  width: 100vw;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+}
+.carousel .selectors {
+  margin-top: -3rem;
+}
+.carousel .selectors a {
+  font-size: 0;
+  display: inline-flex;
+  width: 1rem;
+  height: 1rem;
+  background: #ebebeb;
+  box-shadow: 0px 0px 5px 0px #000000;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 0.5rem 0.5rem 0;
+  position: relative;
+}
+.carousel .selectors a:focus {
+  background: #006699;
+  color: #cccccc;
+}
+.carousel .selectors a:active {
+  top: 1px;
+}
+
+.back-btn, .next-btn {
+  z-index: 1;
+  background-color: transparent;
+  border: none;
+}
+.back-btn a, .next-btn a {
+  font-size: 4rem;
+  color: #cccccc;
+}
+.back-btn a :hover, .next-btn a :hover {
+  color: #006699;
+}
+
+.arrows {
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  width: 90vw;
+  position: relative;
+}
+
+.carousel-img {
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+}
+
+.slides {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: hidden;
+}
+.slides .slide {
+  width: 100vw;
+  height: 80vh;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  transform-origin: center center;
+  transform: scale(1);
+  transition: transform 0.5s;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 100px;
+}
+
+.slides::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.slides::-webkit-scrollbar-thumb {
+  background: #006699;
+  border-radius: 7px;
+}
+
+.slides::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #006699;
+}
+
+h1 {
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+p {
+  color: #0c0100;
+  text-align: center;
+}
+
+@media (min-width: 700px) {
+  h1, h2, p {
+    text-align: left;
+  }
+}
+html,
+body {
+  padding: 0;
+  width: 100vw;
+  margin: 0;
+  background-color: #cccccc;
+  overflow-x: hidden;
+}
+
+.content-container {
+  margin-top: 70px;
+  height: fit-content;
+}
+
+.container {
+  padding: 1.5rem;
+}
+
+* {
+  font-family: "Noto Serif Telugu", serif;
+  box-sizing: border-box;
+}
