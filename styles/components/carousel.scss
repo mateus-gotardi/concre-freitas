@@ -5,8 +5,10 @@
   display: flex;
   flex-direction: column;
   overflow-y: hidden;
+
   .selectors {
     margin-top: -3rem;
+
     a {
       font-size: 0;
       display: inline-flex;
@@ -21,32 +23,40 @@
       margin: 0 .5rem 0.5rem 0;
       position: relative;
     }
+
     a:focus {
       background: $primary-color;
       color: $secondary-color;
     }
+
     a:active {
       top: 1px;
     }
   }
 }
-.back-btn, .next-btn{
+
+.back-btn,
+.next-btn {
   z-index: 1;
   background-color: transparent;
   border: none;
-  a{
-    font-size: 4rem;
+
+  :hover {
     color: $secondary-color;
-    :hover{
-      color: $primary-color;
-    }
+  }
+
+  a {
+    font-size: 4rem;
+    color: $primary-color;
+
   }
 }
-.arrows{
+
+.arrows {
   z-index: 1;
   display: flex;
   justify-content: space-between;
-  width: 90vw;
+  width: 95vw;
   position: relative;
 }
 
@@ -67,6 +77,7 @@
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   overflow-y: hidden;
+
   .slide {
     width: 100vw;
     height: 80vh;
@@ -88,10 +99,12 @@
   width: 8px;
   height: 8px;
 }
+
 .slides::-webkit-scrollbar-thumb {
   background: $primary-color;
   border-radius: 7px;
 }
+
 .slides::-webkit-scrollbar-track {
   background: transparent;
 }

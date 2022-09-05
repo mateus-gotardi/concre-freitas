@@ -166,16 +166,19 @@ a {
   top: 1px;
 }
 
-.back-btn, .next-btn {
+.back-btn,
+.next-btn {
   z-index: 1;
   background-color: transparent;
   border: none;
 }
-.back-btn a, .next-btn a {
-  font-size: 4rem;
+.back-btn :hover,
+.next-btn :hover {
   color: #cccccc;
 }
-.back-btn a :hover, .next-btn a :hover {
+.back-btn a,
+.next-btn a {
+  font-size: 4rem;
   color: #006699;
 }
 
@@ -183,7 +186,7 @@ a {
   z-index: 1;
   display: flex;
   justify-content: space-between;
-  width: 90vw;
+  width: 95vw;
   position: relative;
 }
 
@@ -267,7 +270,6 @@ body {
   width: 100vw;
   margin: 0;
   background-color: #cccccc;
-  overflow-x: hidden;
 }
 
 .content-container {
