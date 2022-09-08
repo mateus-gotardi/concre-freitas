@@ -1,8 +1,10 @@
-@mixin titles ($size, $centralize){
+@mixin texts ($size, $centralize){
     font-size: $size;
     text-align: $centralize;
 }
-
+h1,h2,h3,h4,p,strong{
+  cursor:default
+}
 h1,
 h2,
 h3,
@@ -10,19 +12,27 @@ h4 {
   color: $primary-color;
 }
 h1 {
-  @include titles (1.8rem, center)
+  @include texts (1.4rem, center)
 }
 h2 {
-  @include titles (1.5rem, center)
+  @include texts (1.2rem, center)
 }
-
+span{
+  @include texts (.9rem, center)
+}
 
 p{
     color: $black;
     text-align: center;
 }
 @media (min-width: 700px) {
-    h1, h2, p {
-        text-align: left;
+    h1{
+        @include texts (1.6rem, left)
+    }
+    h2{
+      @include texts (1.4rem, left)
+    }
+    span, p{
+      font-size: 1.1rem;
     }
 }

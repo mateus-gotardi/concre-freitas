@@ -134,12 +134,14 @@ a {
   }
 }
 .carousel {
-  height: 75vh;
-  width: 100vw;
+  height: 72vh;
+  width: 100%;
   text-align: center;
   display: flex;
   flex-direction: column;
-  overflow-y: hidden;
+  overflow: hidden;
+  margin-top: -70px;
+  padding-top: 70px;
 }
 .carousel .selectors {
   margin-top: -3rem;
@@ -207,8 +209,12 @@ a {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   overflow-y: hidden;
+  margin-top: -70px;
+  padding-top: 70px;
 }
 .slides .slide {
+  margin-top: -70px;
+  padding-top: 70px;
   width: 100vw;
   height: 80vh;
   scroll-snap-align: start;
@@ -237,6 +243,10 @@ a {
   background: transparent;
 }
 
+h1, h2, h3, h4, p, strong {
+  cursor: default;
+}
+
 h1,
 h2,
 h3,
@@ -245,12 +255,17 @@ h4 {
 }
 
 h1 {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   text-align: center;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+span {
+  font-size: 0.9rem;
   text-align: center;
 }
 
@@ -260,16 +275,132 @@ p {
 }
 
 @media (min-width: 700px) {
-  h1, h2, p {
+  h1 {
+    font-size: 1.6rem;
     text-align: left;
+  }
+  h2 {
+    font-size: 1.4rem;
+    text-align: left;
+  }
+  span, p {
+    font-size: 1.1rem;
+  }
+}
+.location-icon {
+  width: 1.2rem;
+  margin: 0 0 5px 0;
+}
+.location-icon img {
+  width: 100%;
+}
+
+.address-head, .contact-link {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 0.3rem;
+}
+
+.address-head {
+  margin-bottom: 1rem;
+}
+
+.contact {
+  margin-top: -70px;
+  padding-top: calc(70px + 0.2rem);
+  margin-bottom: 3rem;
+}
+
+.map {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 12rem;
+  margin-bottom: 1rem;
+}
+.map iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.contacts {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.contact-icon {
+  margin-bottom: 2px;
+  width: 1.2rem;
+  color: #006699;
+}
+
+.contact-link {
+  padding: 0.6rem 0.8rem;
+  background-color: #006699;
+  border-radius: 8px;
+}
+
+@media (min-width: 700px) {
+  .map {
+    height: 20rem;
+  }
+  .contact-icon {
+    width: 1.4rem;
+  }
+  .contacts {
+    justify-content: flex-start;
+    gap: 3rem;
+  }
+}
+.img-container {
+  width: 15rem;
+  overflow: hidden;
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.img-container img {
+  width: 25rem;
+  height: 20rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: auto;
+}
+.grid .grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: auto auto;
+  }
+}
+@media (min-width: 1080px) {
+  .grid {
+    grid-template-columns: auto auto auto;
   }
 }
 html,
 body {
   padding: 0;
-  width: 100vw;
   margin: 0;
   background-color: #cccccc;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 .content-container {
@@ -278,10 +409,20 @@ body {
 }
 
 .container {
-  padding: 1.5rem;
+  padding-top: calc(1.5rem + 70px);
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin-top: -70px;
 }
 
 * {
   font-family: "Noto Serif Telugu", serif;
   box-sizing: border-box;
+}
+
+@media (min-width: 700px) {
+  .container {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
 }
