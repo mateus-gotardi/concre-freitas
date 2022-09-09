@@ -36,3 +36,13 @@ p{
       font-size: 1.1rem;
     }
 }
+.contact-link{
+  
+  span{
+    color: $secondary-color;
+  }
+}
+.contact-link:hover{
+  box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.74)
+
+}
